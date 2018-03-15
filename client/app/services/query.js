@@ -91,7 +91,7 @@ class Parameter {
     } else if (value && this.type === 'enum') {
       const options = this.enumOptions.split('\n');
       if (options.every(option => option.startsWith('$'))) {
-        this.value = moment(value).format('YYYY-MM-DD');
+        this.value = moment(value).format('YYYY-MM-DD HH:mm');
         this.$$value = moment(this.value).toDate();
       }
     }

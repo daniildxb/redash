@@ -172,11 +172,11 @@ function ParametersDirective($location, $uibModal) {
               } else if (n[changedIndex] === moment().add(-1, 'days').format('YYYY-MM-DD') && scope.parameters[changedIndex].name.endsWith('$From')) {
                 scope.parameters[changedIndex].ngModel = moment(n[changedIndex]).format('YYYY-MM-DD');
                 scope.parameters[scope.getPairedToInputIndex(scope.parameters[changedIndex])].ngModel
-                  = scope.parameters[changedIndex].ngModel;
+                  = moment().format('YYYY-MM-DD');
               } else if (scope.parameters[changedIndex].name.endsWith('$From')) {
                 scope.parameters[changedIndex].ngModel = moment(n[changedIndex]).format('YYYY-MM-DD');
                 scope.parameters[scope.getPairedToInputIndex(scope.parameters[changedIndex])].ngModel
-                  = moment().format('YYYY-MM-DD');
+                  = moment().add(1, 'days').format('YYYY-MM-DD');
               } else {
                 scope.parameters[changedIndex].ngModel = moment(n[changedIndex]).format('YYYY-MM-DD');
               }
